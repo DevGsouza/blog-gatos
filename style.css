@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --color-dark-blue: #065e7c;
+    --color-ligth-blue: #387e96;
+    --color-white-two: #f4fcff;
+    --color-white-one: #fff;
+    --color-black: #121214;
+    --color-gray: #202024;
+}
+
+*, 
+:root,
+body {
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+#box {
+    display: grid;
+    grid-template-areas: 
+    "A"
+    "B"
+    "C"
+    "D";  
+}
+
+.container {
+    max-width: 38.4rem;
+    padding-inline: 1.4rem;
+    margin: 0 auto;
+    display: flex;
+    gap: 2.4rem;
+}
+
+header, footer {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white-one);
+
+    font-weight: 500;
+}
+
+header{
+    grid-area: A;
+    padding-block: 1.6rem;
+}
+
+form {
+    flex: 1;
+    align-self: center;
+}
+
+form label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+form input {
+    width: 100%;
+
+    font-size: 1.6rem;
+    background-color: var(--color-ligth-blue);
+    color: var(--color-white-one);
+
+    border: none;
+    border-radius: .4rem;
+
+    padding: .8rem 1rem;
+}
+
+form input:focus {
+    outline: none;
+}
+
+form input::placeholder {
+    color: var(--color-white-one);
+}
+
+header img {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+
+    transition: transform 200ms ease-out ;
+}
+
+header img.logo:hover,
+main .container button:hover,
+legend img:hover {
+    transform: scale(1.1) rotate(2deg);
+    filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+}
+
+h1:hover, 
+h2:hover {
+    opacity: 0.8;
+}
+
+header img:hover {
+    transform: scale(1.1) rotate(2deg);
+}
+
+main {
+    grid-area: B;
+}
+
+main .container {
+    display: grid;
+    gap: 0;
+}
+
+main img {
+    max-width: 100%;
+    padding: 0;
+    display: block;
+    margin: auto;
+}
+
+main img:hover {
+    filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+}
+
+main h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+
+    color: var(--color-gray);
+    margin: 3.2rem 0 1.2rem;
+}
+
+main .container button {
+    background-color: var(--color-dark-blue);
+
+    border: none;
+    border-radius: 50%;
+
+    margin-bottom: 3.2rem;
+}
+
+button img {
+    padding: 1.2rem;
+    display: block;
+}
+
+main .container p {
+    font-size: 1.6rem;
+    color: var(--color-black);
+    line-height: 160%;
+}
+
+main .container p + p {
+    margin: 3.2rem 0;
+    
+}
+
+aside {
+    grid-area: C;
+}
+
+aside .container {
+    display: block;
+}
+
+.container h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 160%;
+
+    color: var(--color-gray);
+
+    margin-bottom: 3.2rem;
+}
+
+legend {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+}
+
+legend img {
+    width: 15.2rem;
+    height: 8rem;
+
+    object-fit: cover;
+}
+
+legend h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 160%;
+
+    color: var(--color-gray);
+}
+
+legend p {
+    font-size: 1.4rem;
+    color: var(--color-black);
+    line-height: 160%;
+    font-weight: 500;
+}
+
+legend + legend {
+    margin-top: 3.2rem;
+}
+
+footer {
+    grid-area: D;
+
+    margin-top: 4rem;
+}
+
+footer {
+   text-align: center;
+
+   padding: 2.4rem;
+}
+
+@media (width > 80rem) {
+    #box {
+        grid-template-areas: 
+        "A A"
+        "B C"
+        "D D";
+    }
+
+    *,
+    body,
+    .container,
+    main .black-cat,
+    .flex h1,
+    main .container{
+        padding: initial;
+        margin: initial;
+        max-width: initial;
+    }
+
+    header {
+        display: grid;
+        padding-inline: 11.2rem;
+        
+    }
+
+    main {
+        padding-left: 11.2rem;
+        margin-top: 4.4rem;
+    }
+
+    main img {
+        min-width: 100%;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 1rem;
+        padding-top: 3.1rem;
+    }
+
+    aside {
+        margin: 4.4rem 11rem 0 3.4rem;
+        max-width: 38.4rem;
+    }
+  
+    footer {
+        margin-top: 4rem;
+    }
+}
